@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainPage">
+  <grid id="27dc6" binding="Jpanel1" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="715" height="350"/>
+    </constraints>
+    <properties>
+      <minimumSize width="570" height="250"/>
+      <preferredSize width="570" height="250"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="9009d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <tabbedpane id="bf32c" binding="tabbedPane1" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <focusable value="false"/>
+              <font name="Arial Unicode MS" size="16" style="0"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="d26e6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <tabbedpane title="Input"/>
+                </constraints>
+                <properties>
+                  <minimumSize width="250" height="197"/>
+                  <preferredSize width="250" height="197"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="cd8a7" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="88aca" class="javax.swing.JTextField" binding="txt_Lecture">
+                        <constraints>
+                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                      <component id="42d08" class="javax.swing.JTextField" binding="txt_Credit">
+                        <constraints>
+                          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                      <component id="d3d57" class="javax.swing.JComboBox" binding="cbb_PointSystem">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <model>
+                            <item value="Centesimal"/>
+                            <item value="FivePoint"/>
+                            <item value="Grade"/>
+                          </model>
+                        </properties>
+                      </component>
+                      <component id="c4f5a" class="javax.swing.JComboBox" binding="cbb_Standard">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <model>
+                            <item value="Basic"/>
+                            <item value="Canada"/>
+                            <item value="Improved1"/>
+                            <item value="Improved2"/>
+                            <item value="PKU"/>
+                            <item value="SJTU"/>
+                            <item value="USTC"/>
+                          </model>
+                          <toolTipText value=""/>
+                        </properties>
+                      </component>
+                      <component id="196e" class="javax.swing.JTextField" binding="txt_Score">
+                        <constraints>
+                          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <focusable value="true"/>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                        </properties>
+                      </component>
+                      <component id="f56ad" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <labelFor value="c4f5a"/>
+                          <text value="Standard"/>
+                        </properties>
+                      </component>
+                      <component id="4c285" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <labelFor value="d3d57"/>
+                          <text value="System"/>
+                        </properties>
+                      </component>
+                      <component id="7b5d9" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <alignmentX value="0.0"/>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <labelFor value="88aca"/>
+                          <text value="Cource"/>
+                        </properties>
+                      </component>
+                      <component id="459de" class="javax.swing.JLabel" binding="lbl_score_or_grade">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <labelFor value="196e"/>
+                          <text value="Score"/>
+                        </properties>
+                      </component>
+                      <component id="ca388" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <labelFor value="42d08"/>
+                          <text value="Credit"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <grid id="6a872" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <tabbedpane title="MassInput"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <scrollpane id="486cb">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="38168" class="javax.swing.JTextPane" binding="InputData">
+                        <constraints/>
+                        <properties>
+                          <font name="Arial Unicode MS" size="16" style="0"/>
+                          <name value=""/>
+                        </properties>
+                      </component>
+                    </children>
+                  </scrollpane>
+                </children>
+              </grid>
+            </children>
+          </tabbedpane>
+        </children>
+      </grid>
+      <grid id="d356f" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="be729" binding="courcePanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="200" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="etched" title="Cource" title-justification="2">
+              <font name="Arial Unicode MS" size="16" style="0"/>
+              <title-color color="-16777216"/>
+            </border>
+            <children>
+              <scrollpane id="196b4">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="bevel-lowered"/>
+                <children>
+                  <component id="a2980" class="javax.swing.JList" binding="Lectures">
+                    <constraints/>
+                    <properties>
+                      <font name="Arial Unicode MS" size="16" style="0"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <grid id="b0feb" binding="GPAPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <toolTipText value=""/>
+            </properties>
+            <border type="etched" title="GPA" title-justification="2">
+              <font name="Arial Unicode MS" size="16" style="0"/>
+              <title-color color="-16777216"/>
+              <color color="-65536"/>
+            </border>
+            <children>
+              <component id="bda2a" class="javax.swing.JButton" binding="detailsButton" default-binding="true">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Arial Unicode MS" size="16" style="0"/>
+                  <text value="Details"/>
+                </properties>
+              </component>
+              <component id="e5857" class="javax.swing.JLabel" binding="lbl_GPA">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Arial Unicode MS" size="36" style="0"/>
+                  <foreground color="-16777216"/>
+                  <text value="wait for +1s"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="8e35d" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="23607" class="javax.swing.JButton" binding="allClearButton" default-binding="true">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Unicode MS" size="16" style="0"/>
+              <text value="Clear All"/>
+            </properties>
+          </component>
+          <component id="8d106" class="javax.swing.JButton" binding="removeButton" default-binding="true">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Unicode MS" size="16" style="0"/>
+              <text value="&lt;&lt;"/>
+            </properties>
+          </component>
+          <component id="8db59" class="javax.swing.JButton" binding="addButton" default-binding="true">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Arial Unicode MS" size="16" style="0"/>
+              <text value="&gt;&gt;"/>
+            </properties>
+          </component>
+          <vspacer id="4d0b6">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="e3174">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
