@@ -1,2 +1,2 @@
 # GPA.Calculator
-Unsatisfying Swing usage.
+An attempt on swing.
