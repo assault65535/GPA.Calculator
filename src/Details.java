@@ -6,7 +6,8 @@ public class Details extends JDialog {
     private JButton buttonOK;
     private JLabel detailLabel;
 
-    public Details(String standard) {
+    public Details(JPanel rootPanel,String standard) {
+        setLocationRelativeTo(rootPanel);
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -21,8 +22,8 @@ public class Details extends JDialog {
     }
 
 
-    public static void generateDetails(String arg) {
-        Details dialog = new Details(arg);
+    public static void generateDetails(JPanel where, String arg) {
+        Details dialog = new Details(where,arg);
         dialog.pack();
         dialog.setVisible(true);
     }

@@ -8,6 +8,7 @@ import Models.PointSystem.NonNumeric.NonNumericPointSystem;
 import Models.PointSystem.Numeric.CentesimalSystem;
 import Models.PointSystem.Numeric.FivePointSystem;
 import Models.PointSystem.Numeric.PointSystem;
+import Resources.Info.HTMLs;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -74,6 +75,55 @@ public class Values {
     public static final HashMap<String, String> threadNameOf = new HashMap<String, String>() {{
         put("turnLabelValuesAnimation","turnLabelValuesAnimation");
     }};
+
+    public static final HashMap<String,String> standardOf = new HashMap<String, String>() {{
+        put(
+                Lets.getIdentifierName(BasicIdentifier.class),
+                HTMLs.basicInfo
+        );
+
+        put(
+                Lets.getIdentifierName(CanadaIdentifier.class),
+                HTMLs.canadaInfo
+        );
+
+        put(
+                Lets.getIdentifierName(Improved1Identifier.class),
+                HTMLs.improved1Info
+        );
+
+        put(
+                Lets.getIdentifierName(Improved2Identifier.class),
+                HTMLs.improved2Info
+        );
+
+        put(
+                Lets.getIdentifierName(PKUIdentifier.class),
+                HTMLs.PKUInfo
+        );
+
+        put(
+                Lets.getIdentifierName(SJTUIdentifier.class),
+                HTMLs.SJTUInfo
+        );
+
+        put(
+                Lets.getIdentifierName(USTCIdentifier.class),
+                HTMLs.USTCInfo
+        );
+
+        put(
+                Lets.getIdentifierName(FivePointIdentifier.class),
+                HTMLs.fivePointInfo
+        );
+
+        put(
+                Lets.getIdentifierName(ElevenGradeIdentifier.class),
+                HTMLs.elevenGradeInfo
+        );
+    }};
+
+
 
     private static class Lets {
         public static String getIdentifierName(Class T) {

@@ -185,7 +185,7 @@
                         <properties>
                           <font name="Arial Unicode MS" size="16" style="0"/>
                           <name value=""/>
-                          <toolTipText value="Input format:&#10;cource score credit;"/>
+                          <toolTipText value="Input format:\ncource score credit;"/>
                         </properties>
                       </component>
                     </children>

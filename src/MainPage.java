@@ -18,7 +18,7 @@ public class MainPage {
     private JTextField txt_Lecture;
     private JTextField txt_Credit;
     private JTextField txt_Score;
-    private JPanel Jpanel1;
+    public JPanel Jpanel1;
     private JButton addButton;
     private JButton removeButton;
     private JButton allClearButton;
@@ -123,7 +123,8 @@ public class MainPage {
         });
 
         detailsButton.addActionListener(e -> {
-            Details.generateDetails("踏马不写了");
+            //noinspection SuspiciousMethodCalls
+                Details.generateDetails(Jpanel1,Values.standardOf.get(cbb_Standard.getSelectedItem()));
         });
 
         tabbedPane1.addChangeListener(e -> {
