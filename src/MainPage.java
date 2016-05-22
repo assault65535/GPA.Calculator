@@ -3,7 +3,6 @@ import Models.GPAMethods.LevelIdentifier.ScoreIdentifier;
 import Resources.Values;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyAdapter;
@@ -100,11 +99,14 @@ public class MainPage {
 
         removeButton.addActionListener(e -> deleteSingleData());
 
-        allClearButton.addActionListener(e -> deleteAllData());
+        allClearButton.addActionListener(e -> {
+            stopAnimationTrigger = true;
+            deleteAllData();
+        });
 
         cbb_PointSystem.addItemListener(e -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
-                setCbb_StandardAlternativesTo(Values.inUsePointSystems.get(e.getItem() + "System"));
+                setStandardComboBoxAlternativesTo(Values.inUsePointSystems.get(e.getItem() + "System"));
                 is_using_nonNumericDatas = Values.nonNumericSystems.contains(e.getItem() + "System");
                 lbl_score_or_grade.setText(is_using_nonNumericDatas ? "Grade" : "Score");
             }
@@ -121,7 +123,7 @@ public class MainPage {
         });
 
         detailsButton.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this.Jpanel1, "踏马，不写了");
+            Details.generateDetails("踏马不写了");
         });
 
         tabbedPane1.addChangeListener(e -> {
@@ -143,6 +145,9 @@ public class MainPage {
     }
 
     private void insertMassInputData() {
+
+        stopAnimationTrigger = false;
+
         String str = InputData.getText();
         String lectureName, scoreOrGrade, credit;
         InputData.setText(null);
@@ -172,6 +177,8 @@ public class MainPage {
     }
 
     private void insertTXTData() {
+
+        stopAnimationTrigger = false;
 
         insertListData(txt_Lecture.getText(), txt_Score.getText(), txt_Credit.getText());
 
@@ -232,11 +239,14 @@ public class MainPage {
         }
 
         if (dim.isEmpty()) {
-            lbl_GPA.setForeground(new Color(0, 0, 0));
+            stopAnimationTrigger = true;
         }
     }
 
+    private boolean stopAnimationTrigger = false;
+
     private void deleteAllData() {
+
         Lectures.setModel(new DefaultListModel());
         numericDatas.clear();
         nonNumericDatas.clear();
@@ -246,11 +256,9 @@ public class MainPage {
         txt_Credit.setText(null);
         InputData.setText(null);
 
-        lbl_GPA.setForeground(new Color(0, 0, 0));
-        lbl_GPA.setText(Values.lbl_GPATextIfEmpty);
     }
 
-    private void setCbb_StandardAlternativesTo(String[] alternatives) {
+    private void setStandardComboBoxAlternativesTo(String[] alternatives) {
         DefaultComboBoxModel temp = new DefaultComboBoxModel();
 
         for (String i : alternatives)
@@ -283,7 +291,7 @@ public class MainPage {
             return;
         }
 
-        anim_turnLabelValuesTo(ans);
+        turnLabelValuesAnimation(ans);
     }
 
     private void calculateNonNumeric() {
@@ -310,7 +318,7 @@ public class MainPage {
             return;
         }
 
-        anim_turnLabelValuesTo(ans);
+        turnLabelValuesAnimation(ans);
     }
 
     private void addLecture(double score, double credit) {
@@ -353,26 +361,23 @@ public class MainPage {
         nonNumericDatas = new NonNumericLectureDatas();
     }
 
-    private void anim_turnLabelValuesTo(double val) {
+    private void turnLabelValuesAnimation(double toValue) {
 
-        val = Math.abs(val);
+        toValue = Math.abs(toValue);
 
-        if (val != 0) {
-            while (val < 100.0) {
-                val *= 10.0;
+        if (toValue != 0) {
+            while (toValue < 100.0) {
+                toValue *= 10.0;
             }
         }
 
-        final int digit = (int) val;
+        final int digit = (int) toValue;
 
         Thread animation = new Thread(() -> {
 
             double offset;
-            final int MAXR = 255, MAXG = 180, MAXV = 430, damp = 200;
-            int L, R, G;
-
-            removeButton.setEnabled(false);
-            allClearButton.setEnabled(false);
+            final int MAXR = 240, MAXG = 190, MAXV = 430, collapse = 150;
+            double L, R, G;
 
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 10; j++) {
@@ -386,34 +391,34 @@ public class MainPage {
 
                         offset = i * 100 + j * 10 + k;
 
-                        L = (int) (((offset - damp) > 0 ? (offset - damp) : 0) / (MAXV - damp) * (MAXG + MAXR));
+                        L = ((offset - collapse) > 0 ? (offset - collapse) : 0) / (MAXV - collapse) * (MAXG + MAXR);
 
                         R = L > MAXR ? (MAXG + MAXR - L) : MAXR;
                         G = L > MAXG ? MAXG : L;
 
-                        lbl_GPA.setForeground(new Color(R, G, 0));
+                        lbl_GPA.setForeground(new Color(((int) R), ((int) G), 0));
 
                         if (offset == digit) {
-                            removeButton.setEnabled(true);
-                            allClearButton.setEnabled(true);
+                            return;
+                        }
+
+                        if (stopAnimationTrigger) {
+                            lbl_GPA.setForeground(new Color(0,0,0));
+                            lbl_GPA.setText(Values.lbl_GPATextIfEmpty);
                             return;
                         }
 
                         try {
-                            Thread.currentThread().sleep(5);
+                            Thread.sleep(5);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                 }
             }
-
-            removeButton.setEnabled(true);
-            allClearButton.setEnabled(true);
-
         });
 
-        animation.setName(Values.threadNameOf.get("anim_turnLabelValuesTo"));
+        animation.setName(Values.threadNameOf.get("turnLabelValuesAnimation"));
         animation.start();
     }
 

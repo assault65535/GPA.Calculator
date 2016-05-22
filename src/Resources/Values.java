@@ -17,6 +17,8 @@ import java.util.HashSet;
  */
 public class Values {
 
+    public static final String lbl_GPATextIfEmpty = "wait for +1s";
+
     public static final String levelIdentifierPackage = Lets.getSimplePkgName(ScoreIdentifier.class);
 
     public static final String gradeIdentifierPackage = Lets.getSimplePkgName(GradeIdentifier.class);
@@ -26,21 +28,21 @@ public class Values {
     public static final String nonNumericSystemPackage = Lets.getSimplePkgName(NonNumericPointSystem.class);
 
     public static final String[] modelsForCentesimalSystem = {
-            Lets.getSimpleNameWithoutPostfix(BasicIdentifier.class,"Identifier"),
-            Lets.getSimpleNameWithoutPostfix(CanadaIdentifier.class,"Identifier"),
-            Lets.getSimpleNameWithoutPostfix(Improved1Identifier.class,"Identifier"),
-            Lets.getSimpleNameWithoutPostfix(Improved2Identifier.class,"Identifier"),
-            Lets.getSimpleNameWithoutPostfix(PKUIdentifier.class,"Identifier"),
-            Lets.getSimpleNameWithoutPostfix(SJTUIdentifier.class,"Identifier"),
-            Lets.getSimpleNameWithoutPostfix(USTCIdentifier.class,"Identifier")
+            Lets.getIdentifierName(BasicIdentifier.class),
+            Lets.getIdentifierName(CanadaIdentifier.class),
+            Lets.getIdentifierName(Improved1Identifier.class),
+            Lets.getIdentifierName(Improved2Identifier.class),
+            Lets.getIdentifierName(PKUIdentifier.class),
+            Lets.getIdentifierName(SJTUIdentifier.class),
+            Lets.getIdentifierName(USTCIdentifier.class),
     };
 
     public static final String[] modelsForFivePointSystem = {
-            Lets.getSimpleNameWithoutPostfix(FivePointIdentifier.class,"Identifier")
+            Lets.getIdentifierName(FivePointIdentifier.class),
     };
 
     public static final String[] modelsForGradeSystem = {
-            Lets.getSimpleNameWithoutPostfix(ElevenGradeIdentifier.class,"Identifier")
+            Lets.getIdentifierName(ElevenGradeIdentifier.class),
     };
 
     public static final HashMap<String, String[]> inUsePointSystems = new HashMap<String, String[]>() {{
@@ -69,13 +71,15 @@ public class Values {
         add(FivePointSystem.class.getSimpleName());
     }};
 
-    public static final String lbl_GPATextIfEmpty = "wait for +1s";
-
     public static final HashMap<String, String> threadNameOf = new HashMap<String, String>() {{
-        put("anim_turnLabelValuesTo","anim_turnLabelValuesTo");
+        put("turnLabelValuesAnimation","turnLabelValuesAnimation");
     }};
 
     private static class Lets {
+        public static String getIdentifierName(Class T) {
+            return getSimpleNameWithoutPostfix(T,"Identifier");
+        }
+
         public static String getSimpleNameWithoutPostfix(Class T,String Postfix) {
             return T.getSimpleName().substring(0, T.getSimpleName().length() - Postfix.length());
         }

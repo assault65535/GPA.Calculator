@@ -134,7 +134,7 @@
                           <alignmentX value="0.0"/>
                           <font name="Arial Unicode MS" size="16" style="0"/>
                           <labelFor value="88aca"/>
-                          <text value="Cource"/>
+                          <text value="Course"/>
                         </properties>
                       </component>
                       <component id="459de" class="javax.swing.JLabel" binding="lbl_score_or_grade">
@@ -161,30 +161,45 @@
                   </grid>
                 </children>
               </grid>
-              <grid id="6a872" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="6a872" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <tabbedpane title="MassInput"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <toolTipText value=""/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <scrollpane id="486cb">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties/>
-                    <border type="none"/>
+                    <border type="none">
+                      <font name="Arial Unicode MS" style="0"/>
+                    </border>
                     <children>
                       <component id="38168" class="javax.swing.JTextPane" binding="InputData">
                         <constraints/>
                         <properties>
                           <font name="Arial Unicode MS" size="16" style="0"/>
                           <name value=""/>
+                          <toolTipText value="Input format:&#10;cource score credit;"/>
                         </properties>
                       </component>
                     </children>
                   </scrollpane>
+                  <component id="709b0" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font name="Arial Unicode MS" size="16" style="0"/>
+                      <labelFor value="38168"/>
+                      <text value="&lt;html&gt;&#10;Input format: cource score credit;&lt;br&gt;&#10;e.g. Math 80 4.0;&#10;&lt;/html&gt;"/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
             </children>
@@ -207,7 +222,7 @@
               </grid>
             </constraints>
             <properties/>
-            <border type="etched" title="Cource" title-justification="2">
+            <border type="etched" title="Course" title-justification="2">
               <font name="Arial Unicode MS" size="16" style="0"/>
               <title-color color="-16777216"/>
             </border>
