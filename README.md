@@ -1,2 +1,2 @@
 # GPA.Calculator
-An attempt on swing.
+An attempt on swing
